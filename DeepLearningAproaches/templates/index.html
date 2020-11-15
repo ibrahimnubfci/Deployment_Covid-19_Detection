@@ -1,0 +1,27 @@
+{% extends 'headerPage.html' %}
+
+{% block content%}
+
+    <h2>Welcome to our apps</h2>
+
+
+    <br>
+
+    <form method="post" enctype="multipart/form-data" action="predictImage">
+
+ {% csrf_token %}
+ <div class="col-md-4 col-sm-4"><label for="fname">Upload CXR Image File Here:</label> </div> <input name="filePath" type="file"><br><br>
+ <br>
+
+
+<div> <input type="submit" value="Submit" ></div>
+
+ <h2>This patient condition is {{a}}</h2>
+ <img src={{filePathName}} alt='imagename'height="250" width="350">
+ {{filePathName}}
+
+</form>
+<br>
+
+
+{% endblock %}
